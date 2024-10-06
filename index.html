@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Planetarium</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Planetarium</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white text-center">
+        <div class="container">
+            <h1 class="display-4">Explore the Universe</h1>
+            <p class="lead">Discover planets, stars, and celestial events at our interactive planetarium.</p>
+            <a href="#globe" class="btn btn-primary btn-lg">Explore 3D Dome</a>
+        </div>
+    </section>
+
+    <!-- 3D Dome Section -->
+    <section id="globe" class="globe-section">
+        <div class="container">
+            <h2 class="text-center">Interactive 3D Dome</h2>
+
+            <!-- A-Frame Scene -->
+            <a-scene>
+                <!-- Video asset -->
+                <video id="night-sky-video" autoplay loop="true" src="video/night-sky.mp4" playsinline="true" crossorigin="anonymous"></video>
+
+                <!-- Sky (Dome) with the video texture -->
+                <a-sky src="#night-sky-video" rotation="0 -130 0"></a-sky>
+                
+                <!-- Add a camera for interaction -->
+                <a-camera position="0 1.6 0" wasd-controls="enabled: true" look-controls="enabled: true"></a-camera>
+            </a-scene>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Upcoming Events</h2>
+            <!-- Add event cards here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <!-- Add contact form here -->
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
